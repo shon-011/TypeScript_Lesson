@@ -1,3 +1,3 @@
 # TypeScript_Lesson
 
-##TypeScriptの練習をしていく！
+## TypeScriptの練習をしていく！
