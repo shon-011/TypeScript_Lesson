@@ -1,16 +1,17 @@
-var hasValue = false;
-var count = 10;
-var float = .2;
-var single = 'Hello TypeScript';
+"use strict";
+let hasValue = false;
+let count = 10;
+let float = .2;
+let single = 'Hello TypeScript';
 //型推論
-var cool = 'suiron';
+let cool = 'suiron';
 // オブジェクト
-var person = {
+const person = {
     name: 'smith',
     age: 20
 };
 //ネスト
-var person2 = {
+const person2 = {
     name: {
         first: 'test',
         last: 'rsst'
@@ -18,11 +19,11 @@ var person2 = {
     age: 123
 };
 //配列
-var chai = ['milk', 'spice', 'tea'];
+const chai = ['milk', 'spice', 'tea'];
 // ユニオン型
-var chai2 = ['milk', 'spice', 'tea', 2];
+const chai2 = ['milk', 'spice', 'tea', 2];
 // tuple(配列の長さ、型を厳しく指定)
-var book = ['business', 1340, true];
+const book = ['business', 1340, true];
 //Enum(列挙型)
 var CoffeeSize;
 (function (CoffeeSize) {
@@ -31,8 +32,37 @@ var CoffeeSize;
     CoffeeSize[CoffeeSize["GRANDE"] = 2] = "GRANDE";
     CoffeeSize[CoffeeSize["VENTI"] = 3] = "VENTI";
 })(CoffeeSize || (CoffeeSize = {}));
-var coffee = {
+const coffee = {
     price: 400,
-    size: CoffeeSize.TALL
+    size: CoffeeSize.VENTI
 };
-console.log(coffee);
+// Union型
+let unionType = 19;
+unionType = 'LAB';
+unionType.toUpperCase();
+let unionTypes = [234, 'asd'];
+// Literal型
+const apple = 'apple';
+let size = 'L';
+size;
+let clothSize = 'M';
+//----------------------------------
+//関数（引数には必ずtypeをつける）
+//返り値は型推論がきく
+//----------------------------------
+function add(n1, n2) {
+    return n1 + n2;
+}
+add(2, 4);
+// void
+function sayHello() {
+    console.log('hello');
+}
+//callBack関数
+function handle(num, callBack) {
+    const dobleNum = callBack(num * 2);
+    console.log(dobleNum);
+}
+handle(10, dobleNum => {
+    return dobleNum;
+});
