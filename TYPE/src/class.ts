@@ -3,7 +3,11 @@ class Person {
     constructor(initName: string){
         this.name = initName;
     }
+
+    say (){
+        console.log(`Hello! My name is ${this.name}`);
+    }
 }
 
 const shon = new Person('shona');
-console.log(shon);
+shon.say();
